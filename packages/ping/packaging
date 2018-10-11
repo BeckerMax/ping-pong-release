@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
-set -ex
+#!/bin/bash -eu
 
-go build -o "$BOSH_INSTALL_TARGET/ping"
+cp -a ping/* ${BOSH_INSTALL_TARGET}
+
+pushd ${BOSH_INSTALL_TARGET}
+  source /var/vcap/packages/golang-1.11-linux/bosh/compile.env
+  mkdir -p ./bin
+  go build -o "./bin/ping"
+popd

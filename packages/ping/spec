@@ -3,4 +3,4 @@ name: ping
 
 dependencies: [golang]
 
-files: []
+files: [ping/**/*]

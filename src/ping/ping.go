@@ -4,10 +4,18 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"time"
 )
 
 func main() {
-	ping()
+	doAll10Seconds(ping)
+}
+
+func doAll10Seconds(repeatMe func()) {
+	for {
+		repeatMe()
+		time.Sleep(10 * time.Second)
+	}
 }
 
 func ping() {

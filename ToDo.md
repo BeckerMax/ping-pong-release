@@ -3,8 +3,7 @@ scripts
 packages -> source code dependencies and package scripts
 
 
-- build binary
-- packaging
+- bosh vendor-package golang-1.11-linux ~/workspace/github.com/bosh-packages/golang-release
 - path to golang library the log dir so stdout is found in /var/sys/log/<job>
 - Add a way to path in ip in ping job over manifest
   - do I need env variable or passing something to the binary?
