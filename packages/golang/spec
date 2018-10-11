@@ -1,6 +1,0 @@
----
-name: golang
-
-dependencies: []
-
-files: [golang/go1.11.1.linux-amd64.tar.gz] # https://dl.google.com/go/go1.11.1.linux-amd64.tar.gz]
