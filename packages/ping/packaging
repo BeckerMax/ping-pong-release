@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+
+go build -o "$BOSH_INSTALL_TARGET/ping"

@@ -1,0 +1,9 @@
+---
+name: ping
+
+templates:
+  bpm.yml.erb: config/bpm.yml
+
+packages: []
+
+properties: {}

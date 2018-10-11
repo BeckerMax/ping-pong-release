@@ -1,0 +1,5 @@
+check process ping
+  with pidfile /var/vcap/sys/run/bpm/ping/ping.pid
+  start program "/var/vcap/jobs/bpm/bin/bpm start ping"
+  stop program "/var/vcap/jobs/bpm/bin/bpm stop ping"
+  group vcap
