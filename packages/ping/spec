@@ -1,6 +1,8 @@
 ---
 name: ping
 
-dependencies: [golang]
+dependencies:
+- golang-1.11-linux
 
-files: [ping/**/*]
+files:
+- ping/**/*

@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 )
@@ -19,7 +20,7 @@ func doAll10Seconds(repeatMe func()) {
 }
 
 func ping() {
-	pongIP := ""
+	pongIP := os.Getenv("PONG_IP")
 	pingReader := strings.NewReader("Hello, Reader!")
 	resp, err := http.Post(pongIP, "text/plain", pingReader)
 	if err != nil {

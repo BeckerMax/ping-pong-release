@@ -6,4 +6,6 @@ templates:
 
 packages: []
 
-properties: {}
+properties:
+  pongIP:
+    description: will be pinged

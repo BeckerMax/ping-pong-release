@@ -1,5 +1,5 @@
 src -> all source code from the job, can be git submodules packaged by package
-scripts
+jobs -> Describes to the agent how to start the release, templates and how to render them.
 packages -> source code dependencies and package scripts
 
 
@@ -10,4 +10,19 @@ packages -> source code dependencies and package scripts
 - Provide the ip over bosh links from pong
 - Write a release for the ruby license server
 - try out writing a drain script
-- Update create release to include bpm
+- Update create release documentation to include bpm
+- Change Specify the property in the deployment manifest to `3.`
+
+
+DEPLOY:
+create bosh-lite
+cd ~/deployments/virtualbox
+../../workspace/bosh-deployment/virtualbox/create-env.sh
+
+cd ~/max/ping-pong-release
+. ../../deployments/virtualbox/.envrc
+bosh upload-release
+bosh ucc example-manifest/warden-cloud-config.yml
+
+ bosh upload-stemcell --sha1 79833dcea376478a779cecd93b07394f2a363102 \
+  https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-xenial-go_agent?v=97.28

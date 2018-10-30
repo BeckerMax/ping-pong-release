@@ -1,6 +1,6 @@
-#!/bin/bash -eu
+#!/bin/bash -eux
 
-cp -a ping/* ${BOSH_INSTALL_TARGET}
+cp -a ${BOSH_COMPILE_TARGET}/ping/* ${BOSH_INSTALL_TARGET}
 
 pushd ${BOSH_INSTALL_TARGET}
   source /var/vcap/packages/golang-1.11-linux/bosh/compile.env

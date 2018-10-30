@@ -1,3 +1,5 @@
 processes:
   - name: ping
     executable: /var/vcap/jobs/ping/bin/ping
+    env:
+      PONG_IP: <%= p('pongIP') %>

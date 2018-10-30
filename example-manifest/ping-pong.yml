@@ -1,0 +1,36 @@
+---
+name: ping-pong-test
+
+releases:
+- name: ping-pong
+  version: latest
+- name: "bpm"
+  version: "0.13.0"
+  url: "https://bosh.io/d/github.com/cloudfoundry-incubator/bpm-release?v=0.13.0"
+  sha1: "4b6ebfdaa467c04855528172b099e565d679e0f5"
+
+instance_groups:
+- name: ping
+  instances: 1
+  azs: [z1]
+  jobs:
+  - name: ping
+    release: ping-pong
+    properties:
+      pongIP: localhost
+  - {name: bpm, release: bpm}
+  vm_type: default
+  stemcell: default
+  networks:
+  - name: default
+
+stemcells:
+- alias: "default"
+  os: "ubuntu-xenial"
+  version: "97.28"
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  canary_watch_time: 1000-30000
+  update_watch_time: 1000-30000
